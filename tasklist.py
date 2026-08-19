@@ -3,19 +3,19 @@ tasks = []
 
 def show_actions():
     print("You are in main menu, choose your action :")
-    print("  1. показать список задач ")
-    print("  2. добавить задачу ")
-    print("  3. удалить задачу ")
-    print("  4. отметить задачу выполненной ")
-    print("  0. выйти из программы ")
+    print("  1. show task list ")
+    print("  2. add a task ")
+    print("  3. delete a task ")
+    print("  4. mark a task as completed ")
+    print("  0. exit the program ")
 
 
 def show_tasks():
     if not tasks:
-        print("у вас пока нет задач ")
+        print("you don't have any tasks yet ")
         return
     else:
-        print("список задач:")
+        print("task list:")
         counter = 1
         for task in tasks:
             print(f"{counter}. {task}")
@@ -23,21 +23,21 @@ def show_tasks():
 
 
 def add_task():
-    title = input("введите название задачи :")
+    title = input("enter the task name :")
     tasks.append(title)
-    print(f'задача "{title}" успешно добавлена в список задач ')
+    print(f'task "{title}" was successfully added to the task list')
 
 
 def deleted_task():
     show_tasks()
-    number = int(input("введите номер удаляемой задачи:"))
+    number = int(input("enter the number of the task you want to delete:"))
     tasks.pop(number - 1)
-    print("задача удалена ")
+    print("task deleted ")
 
 
 def check_task():
     show_tasks()
-    number = int(input("Введите отмечаемую задачу: "))
+    number = int(input("enter the number of the task you want to mark: "))
     if "✅" in tasks[number - 1]:
         tasks[number - 1] = tasks[number - 1][:-1]
     else:
@@ -46,9 +46,9 @@ def check_task():
 
 while True:
     show_actions()
-    command = int(input("введите номер команды :"))
+    command = int(input("enter the command number :"))
     if command == 0:
-        print("программа остановлена")
+        print("program stopped")
         break
     elif command == 1:
         show_tasks()
