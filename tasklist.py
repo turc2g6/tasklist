@@ -2,7 +2,7 @@ tasks = []
 
 
 def show_actions():
-    print("Вы находитесь в главном меню, выбeрите действие :")
+    print("You are in main menu, choose your action :")
     print("  1. показать список задач ")
     print("  2. добавить задачу ")
     print("  3. удалить задачу ")
